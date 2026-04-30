@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For You 💗</title>
-
 <style>
 body {
   height: 100vh;
@@ -15,25 +14,14 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
 }
-
 .container {
   background: white;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-
-h1 {
-  color: #d14b72;
-  margin-bottom: 30px;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
+h1 { color: #d14b72; margin-bottom: 30px; }
+.buttons { display: flex; justify-content: center; gap: 15px; }
 button {
   padding: 12px 25px;
   font-size: 16px;
@@ -42,27 +30,15 @@ button {
   cursor: pointer;
   transition: 0.3s;
 }
-
-.yes {
-  background: #ff6b8a;
-  color: white;
-}
-
-.no {
-  background: #ddd;
-}
-
-button:hover {
-  transform: scale(1.1);
-}
+.yes { background: #ff6b8a; color: white; }
+.no { background: #ddd; }
+button:hover { transform: scale(1.1); }
 </style>
 </head>
-
 <body>
 
 <div class="container">
   <h1 id="question">Do you love me, bebi? 💗</h1>
-
   <div class="buttons">
     <button class="yes" onclick="goYes()">Yes</button>
     <button class="no" id="noBtn" onclick="handleNo()">No</button>
@@ -70,6 +46,5 @@ button:hover {
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>

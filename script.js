@@ -13,6 +13,13 @@ const noMessages = [
 
 let clickCount = 0;
 
+// RESET EVERY TIME PAGE LOADS
+window.onload = function() {
+  clickCount = 0;
+  document.getElementById("noBtn").innerText = "No";
+  document.getElementById("question").innerText = "Do you love me, bebi? 💗";
+};
+
 function goYes() {
   window.location.href = "./next.html";
 }
