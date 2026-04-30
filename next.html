@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 8 Monthsary, Ice 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    background: #fdf0f3;
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+    position: relative;
+  }
+  .petal {
+    position: fixed;
+    top: -40px;
+    width: 14px;
+    height: 18px;
+    border-radius: 70% 30% 70% 30% / 30% 70% 30% 70%;
+    opacity: 0;
+    animation: fall linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.7; }
+    80% { opacity: 0.5; }
+    100% { transform: translateY(110vh) rotate(360deg) scale(0.6); opacity: 0; }
+  }
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+  }
+  .badge {
+    display: inline-block;
+    background: #f9c4d0;
+    color: #8b3a52;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 40px;
+    margin-bottom: 28px;
+    animation: fadeUp 1s ease both;
+  }
+  .heart-big {
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 20px;
+    animation: heartbeat 1.8s ease-in-out infinite, fadeUp 1s ease 0.1s both;
+    display: block;
+  }
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.18); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.12); }
+    56% { transform: scale(1); }
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 7vw, 72px);
+    font-weight: 700;
+    color: #6b1f36;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    animation: fadeUp 1s ease 0.2s both;
+  }
+  .sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(20px, 4vw, 34px);
+    color: #c2607a;
+    margin-bottom: 24px;
+    animation: fadeUp 1s ease 0.35s both;
+  }
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    margin: 4px 0 28px;
+    animation: fadeUp 1s ease 0.45s both;
+  }
+  .divider-line { width: 60px; height: 1px; background: linear-gradient(to right, transparent, #e8a0b0); }
+  .divider-line.r { background: linear-gradient(to left, transparent, #e8a0b0); }
+  .divider-dot { width: 6px; height: 6px; border-radius: 50%; background: #e8a0b0; }
+  .intro-text {
+    font-size: clamp(16px, 2.2vw, 19px);
+    color: #7d3049;
+    max-width: 560px;
+    line-height: 1.85;
+    font-weight: 300;
+    animation: fadeUp 1s ease 0.55s both;
+    margin-bottom: 40px;
+  }
+  .scroll-hint {
+    font-size: 13px;
+    color: #d4849a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeUp 1s ease 0.7s both, bounce 2s ease 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .section {
+    position: relative;
+    z-index: 1;
+    padding: 80px 24px;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 42px);
+    color: #6b1f36;
+    margin-bottom: 8px;
+  }
+  .section-subtitle {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: #c2607a;
+    margin-bottom: 48px;
+  }
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .reason-card {
+    background: rgba(255,255,255,0.75);
+    border: 1px solid #f5c2ce;
+    border-radius: 20px;
+    padding: 28px 22px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .reason-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(180, 60, 90, 0.12);
+  }
+  .reason-icon { font-size: 30px; display: block; margin-bottom: 12px; }
+  .reason-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: #6b1f36;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .reason-text { font-size: 14.5px; color: #9b4a62; line-height: 1.75; font-weight: 300; }
+  .timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, #f5c2ce, #e8849a, #f5c2ce);
+  }
+  .tl-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: calc(50% + 28px);
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .tl-item.right { justify-content: flex-start; padding-right: 0; padding-left: calc(50% + 28px); }
+  .tl-dot {
+    position: absolute;
+    left: 50%;
+    top: 14px;
+    transform: translateX(-50%);
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: #e8849a;
+    border: 2px solid #fdf0f3;
+    box-shadow: 0 0 0 3px #f5c2ce;
+  }
+  .tl-card {
+    background: rgba(255,255,255,0.8);
+    border: 1px solid #f5c2ce;
+    border-radius: 14px;
+    padding: 14px 18px;
+    max-width: 240px;
+    transition: transform 0.3s ease;
+  }
+  .tl-card:hover { transform: scale(1.03); }
+  .tl-month { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #c2607a; margin-bottom: 4px; }
+  .tl-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #6b1f36; }
+  .letter-wrap {
+    background: rgba(255,255,255,0.7);
+    border: 1px solid #f5c2ce;
+    border-radius: 24px;
+    padding: 48px 40px;
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .letter-wrap::before {
+    content: '\201C';
+    position: absolute;
+    top: 10px; left: 20px;
+    font-size: 80px;
+    color: #f5c2ce;
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+  }
+  .letter-body {
+    font-size: clamp(15px, 2vw, 18px);
+    line-height: 2;
+    color: #7d3049;
+    font-weight: 300;
+    margin-bottom: 24px;
+    padding-top: 24px;
+  }
+  .letter-sig { text-align: right; font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; color: #c2607a; }
+  .closing {
+    text-align: center;
+    padding: 80px 24px 100px;
+    position: relative;
+    z-index: 1;
+  }
+  .closing-hearts { font-size: 36px; letter-spacing: 12px; display: block; margin-bottom: 24px; animation: heartbeat 2s ease-in-out infinite; }
+  .closing-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 52px); color: #6b1f36; margin-bottom: 12px; }
+  .closing-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: #c2607a; }
+  .floral-tl, .floral-tr {
+    position: fixed;
+    top: 0;
+    width: 160px; height: 160px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+  }
+  .floral-tl { left: 0; }
+  .floral-tr { right: 0; transform: scaleX(-1); }
+</style>
+</head>
+<body>
+
+<svg class="floral-tl" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="30" cy="30" rx="22" ry="12" fill="#f9b8c7" transform="rotate(-30 30 30)"/>
+  <ellipse cx="60" cy="20" rx="22" ry="12" fill="#f9c9d4" transform="rotate(10 60 20)"/>
+  <ellipse cx="18" cy="60" rx="22" ry="12" fill="#f5a0b8" transform="rotate(-60 18 60)"/>
+  <ellipse cx="80" cy="40" rx="18" ry="10" fill="#f9c9d4" transform="rotate(40 80 40)"/>
+  <ellipse cx="40" cy="80" rx="18" ry="10" fill="#f9b8c7" transform="rotate(-20 40 80)"/>
+  <circle cx="45" cy="45" r="14" fill="#e8849a" opacity="0.6"/>
+  <circle cx="45" cy="45" r="7" fill="#c2607a" opacity="0.5"/>
+  <ellipse cx="100" cy="25" rx="14" ry="8" fill="#f9c9d4" transform="rotate(20 100 25)"/>
+  <ellipse cx="25" cy="100" rx="14" ry="8" fill="#f9c9d4" transform="rotate(-40 25 100)"/>
+</svg>
+<svg class="floral-tr" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="30" cy="30" rx="22" ry="12" fill="#f9b8c7" transform="rotate(-30 30 30)"/>
+  <ellipse cx="60" cy="20" rx="22" ry="12" fill="#f9c9d4" transform="rotate(10 60 20)"/>
+  <ellipse cx="18" cy="60" rx="22" ry="12" fill="#f5a0b8" transform="rotate(-60 18 60)"/>
+  <circle cx="45" cy="45" r="14" fill="#e8849a" opacity="0.6"/>
+  <circle cx="45" cy="45" r="7" fill="#c2607a" opacity="0.5"/>
+</svg>
+
+<section class="hero">
+  <span class="badge">♡ 8 Months Together ♡</span>
+  <span class="heart-big">🌸</span>
+  <h1>Happy 8th Monthsary</h1>
+  <p class="sub">my dearest Ice</p>
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line r"></div>
+  </div>
+  <p class="intro-text">
+    Eight months of smiles, laughter, and a love that keeps growing. This little page is my way of saying — every moment with you has been the best part of my days.
+  </p>
+  <span class="scroll-hint">↓ scroll with love ↓</span>
+</section>
+
+<section class="section">
+  <h2 class="section-title">8 Reasons I Love You</h2>
+  <p class="section-subtitle">one for every beautiful month</p>
+  <div class="reasons-grid">
+    <div class="reason-card"><span class="reason-icon">🌸</span><div class="reason-title">Your smile</div><div class="reason-text">It's the first thing I think about every morning and the last thing that makes me happy at night.</div></div>
+    <div class="reason-card"><span class="reason-icon">💬</span><div class="reason-title">The way you talk</div><div class="reason-text">I could listen to you for hours. Every word you say feels warm and real to me.</div></div>
+    <div class="reason-card"><span class="reason-icon">🌙</span><div class="reason-title">Late night moments</div><div class="reason-text">Those quiet nights talking about everything and nothing — they've become my favorite memories.</div></div>
+    <div class="reason-card"><span class="reason-icon">🌷</span><div class="reason-title">Your kindness</div><div class="reason-text">The gentle way you treat people around you shows exactly who you are — and I love her deeply.</div></div>
+    <div class="reason-card"><span class="reason-icon">🦋</span><div class="reason-title">How you make me feel</div><div class="reason-text">Safe. Seen. Enough. You make me want to be the best version of myself.</div></div>
+    <div class="reason-card"><span class="reason-icon">🎀</span><div class="reason-title">Your laugh</div><div class="reason-text">Genuinely contagious. I'd do silly things forever just to hear it.</div></div>
+    <div class="reason-card"><span class="reason-icon">✨</span><div class="reason-title">Your strength</div><div class="reason-text">You carry so much quietly and still shine. That inspires me every single day.</div></div>
+    <div class="reason-card"><span class="reason-icon">💗</span><div class="reason-title">Simply you</div><div class="reason-text">Not a version of you. Not a part of you. All of you — the whole, beautiful, wonderful Ice.</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Our Story So Far</h2>
+  <p class="section-subtitle">8 months of us</p>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-card"><div class="tl-month">Month 1</div><div class="tl-text">The beginning — nervous smiles and the butterflies that never quite left.</div></div></div>
+    <div class="tl-item right"><div class="tl-dot"></div><div class="tl-card"><div class="tl-month">Month 2</div><div class="tl-text">We started feeling comfortable — like home in each other's company.</div></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-card"><div class="tl-month">Month 3</div><div class="tl-text">First little challenges — and we came out stronger on the other side.</div></div></div>
+    <div class="tl-item right"><div class="tl-dot"></div><div class="tl-card"><div class="tl-month">Month 4–5</div><div class="tl-text">Deeper conversations. Longer calls. More "us" and less "just me."</div></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-card"><div class="tl-month">Month 6–7</div><div class="tl-text">The kind of comfort where silences feel peaceful, not awkward.</div></div></div>
+    <div class="tl-item right"><div class="tl-dot"></div><div class="tl-card"><div class="tl-month">Month 8 🌸</div><div class="tl-text">Right here — still falling, still grateful, still so in love with you.</div></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">A Letter for You</h2>
+  <p class="section-subtitle">from Wym, with all his heart</p>
+  <div class="letter-wrap">
+    <p class="letter-body">
+      My dearest Ice,<br><br>
+      Eight months ago, something shifted — quietly, gently, permanently. That was you, walking into my life.<br><br>
+      I never imagined that someone could make ordinary days feel like something worth remembering. But you do that. Effortlessly. Just by being you.<br><br>
+      Every month with you has felt like a gift I didn't know I needed. And today, on our 8th monthsary, I just want you to know — I choose you. Every single day. I'm so lucky to call you mine.<br><br>
+      Thank you for your love, your patience, your laughter, and your heart. Thank you for being Ice — my Ice.<br><br>
+      Here's to many more months, more memories, and more of us. 🌸
+    </p>
+    <div class="letter-sig">Forever yours, Wym 💗</div>
+  </div>
+</section>
+
+<div class="closing">
+  <span class="closing-hearts">🌸💗🌸</span>
+  <h2 class="closing-title">Happy 8 Monthsary, Ice!</h2>
+  <p class="closing-sub">I love you — yesterday, today, and all the days to come.</p>
+</div>
+
+<script>
+  const colors = ['#f9b8c7','#f5a0b8','#e8849a','#f9c9d4','#c2607a','#f0c0cc'];
+  for (let i = 0; i < 28; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.background = colors[Math.floor(Math.random() * colors.length)];
+    p.style.width = (10 + Math.random() * 10) + 'px';
+    p.style.height = (13 + Math.random() * 10) + 'px';
+    p.style.animationDuration = (6 + Math.random() * 10) + 's';
+    p.style.animationDelay = (Math.random() * 12) + 's';
+    p.style.transform = 'rotate(' + (Math.random()*360) + 'deg)';
+    document.body.appendChild(p);
+  }
+</script>
+</body>
+</html>
